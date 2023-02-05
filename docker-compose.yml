@@ -8,3 +8,8 @@ services:
     volumes:
       - ".:/projects"
     tty: true
+    networks:
+      - laravel-docker_sail
+networks:
+  laravel-docker_sail:
+    external: true
