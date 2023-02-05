@@ -1,0 +1,10 @@
+version: "3"
+services:
+  node:
+    image: node:12.0.0
+    working_dir: /projects
+    ports:
+      - 4200:4200
+    volumes:
+      - ".:/projects"
+    tty: true
