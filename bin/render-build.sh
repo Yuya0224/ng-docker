@@ -2,5 +2,5 @@
 # exit on error
 set -o errexit
 
-npm install
+npm install --production
 ng build --prod
