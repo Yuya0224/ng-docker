@@ -1,0 +1,12 @@
+services:
+  # Production
+  - type: web
+    name: ng-docker
+    env: node
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: ./bin/render-build.sh
+    startCommand: npm start
+    # envVars:
+    #   - fromGroup: ng-docker
