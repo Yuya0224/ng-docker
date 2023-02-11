@@ -7,7 +7,7 @@ services:
     plan: free
     branch: main
     buildCommand: ./bin/render-build.sh
-    # startCommand: ng run --prod
+    startCommand: ng build --prod
 
     # envVars:
     #   - fromGroup: ng-docker
