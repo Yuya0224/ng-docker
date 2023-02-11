@@ -3,4 +3,4 @@
 set -o errexit
 
 npm install
-ng node --max_old_space_size=4096 && ng build --prod
+ng build --prod
