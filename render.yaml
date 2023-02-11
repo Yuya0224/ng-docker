@@ -7,6 +7,6 @@ services:
     plan: free
     branch: main
     buildCommand: ./bin/render-build.sh
-    startCommand: ng serve --prod
+    startCommand: NODE_OPTIONS="--max-old-space-size=4096" ng serve --prod
     # envVars:
     #   - fromGroup: ng-docker
