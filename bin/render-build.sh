@@ -3,4 +3,4 @@
 set -o errexit
 
 npm install
-ng build --prod
+npm run build
