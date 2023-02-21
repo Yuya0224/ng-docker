@@ -4,9 +4,34 @@ services:
     name: ng-docker
     env: node
     region: singapore
-    plan: free
+    plan: Starter
     branch: main
     buildCommand: ./bin/render-build.sh
     startCommand: node server.js
-    # envVars:
-    #   - fromGroup: ng-docker
+    envVars:
+      - fromGroup: angular-demo-secrets-prd
+    autoDeploy: false
+
+  # Staging
+  - type: web
+    name: angular-demo-stg
+    env: node
+    region: singapore
+    plan: free
+    branch: develop
+    buildCommand: ./bin/render-build.sh
+    startCommand: node server.js
+    envVars:
+      - fromGroup: angular-demo-secrets-stg
+  autoDeploy: false
+
+envVarGroups:
+  # Production
+  - name: angular-demo-secrets-prd
+    envVars:
+      - key: API_URL
+        sync: false
+  - name: angular-demo-secrets-stg
+    envVars:
+      - key: API_URL
+        sync: false
