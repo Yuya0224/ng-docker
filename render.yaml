@@ -1,7 +1,7 @@
 services:
   # Production
   - type: web
-    name: ng-docker
+    name: angular-demo-prd
     env: node
     region: singapore
     plan: Starter
