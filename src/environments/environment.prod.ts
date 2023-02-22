@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://laravel-docker-demo.onrender.com/api',
+  staging: false,
+  apiUrl: 'https://laravel-demo-prd.onrender.com/api',
 };

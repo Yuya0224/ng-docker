@@ -26,7 +26,6 @@ services:
     autoDeploy: false
 
 envVarGroups:
-  # Production
   - name: angular-demo-secrets-prd
     envVars:
       - key: API_URL
