@@ -6,7 +6,7 @@ services:
     region: singapore
     plan: Starter
     branch: main
-    buildCommand: ./bin/render-build.sh
+    buildCommand: ./bin/render-build-prd.sh
     startCommand: node server.js
     envVars:
       - fromGroup: angular-demo-secrets-prd
@@ -19,7 +19,7 @@ services:
     region: singapore
     plan: free
     branch: develop
-    buildCommand: ./bin/render-build.sh
+    buildCommand: ./bin/render-build-stg.sh
     startCommand: node server.js
     envVars:
       - fromGroup: angular-demo-secrets-stg
