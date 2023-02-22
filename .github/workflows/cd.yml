@@ -1,0 +1,35 @@
+# ref: https://api-docs.render.com/reference/introduction
+
+name: cd
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+    inputs:
+      target:
+        type: choice
+        description: Deploy target
+        required: true
+        options:
+          - main
+          - develop
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Render.com for stg
+        uses: nick-fields/retry@v2
+        if: github.ref == 'refs/heads/develop'
+        with:
+          timeout_minutes: 2
+          max_attempts: 3
+          command: "curl -H 'Authorization: Bearer ${{ secrets.RENDER_COM_API_KEY }}' -X POST https://api.render.com/v1/services/${{ secrets.RENDER_COM_SERVICE_ID_FOR_STG }}/deploys"
+      - name: Deploy Render.com for prd
+        uses: nick-fields/retry@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          timeout_minutes: 2
+          max_attempts: 3
+          command: "curl -H 'Authorization: Bearer ${{ secrets.RENDER_COM_API_KEY }}' -X POST https://api.render.com/v1/services/${{ secrets.RENDER_COM_SERVICE_ID_FOR_PRD }}/deploys"
