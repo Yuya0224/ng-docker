@@ -30,7 +30,11 @@ envVarGroups:
     envVars:
       - key: API_URL
         sync: false
+      - key: TEST
+        sync: false
   - name: angular-demo-secrets-stg
     envVars:
       - key: API_URL
+        sync: false
+      - key: TEST
         sync: false
