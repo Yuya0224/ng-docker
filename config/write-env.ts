@@ -14,8 +14,12 @@ if (dotenv) {
   env.production = dotenv.PRODCTION === 'true';
 }
 
+console.log(env.apiUrl);
+
 const contents = 'export const secret = ' + JSON.stringify(env);
 fs.writeFileSync(
   join(__dirname, '../src/environments/secret-env.ts'),
   contents
 );
+
+console.log(contents);
