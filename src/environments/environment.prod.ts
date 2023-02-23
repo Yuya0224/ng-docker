@@ -1,5 +1,4 @@
-export const environment = {
-  production: true,
-  staging: false,
-  apiUrl: 'https://laravel-demo-prd.onrender.com/api',
-};
+import { secret } from './secret-env';
+
+export const environment = secret;
+// apiUrl: 'https://laravel-demo-prd.onrender.com/api',
