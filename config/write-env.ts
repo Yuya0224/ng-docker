@@ -10,7 +10,7 @@ const env = {
 };
 
 if (dotenv) {
-  env.apiUrl = dotenv.API_PRD_URL;
+  env.apiUrl = dotenv.API_URL;
   env.production = dotenv.PRODCTION === 'true';
 }
 
