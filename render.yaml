@@ -10,6 +10,8 @@ services:
     startCommand: node server.js
     envVars:
       - fromGroup: angular-demo-secrets-prd
+      - key: PRODCTION
+        value: true
     autoDeploy: false
 
   # Staging
@@ -23,6 +25,8 @@ services:
     startCommand: node server.js
     envVars:
       - fromGroup: angular-demo-secrets-stg
+      - key: PRODCTION
+        value: true
     autoDeploy: false
 
 envVarGroups:
@@ -30,11 +34,7 @@ envVarGroups:
     envVars:
       - key: API_URL
         sync: false
-      - key: TEST
-        sync: false
   - name: angular-demo-secrets-stg
     envVars:
       - key: API_URL
-        sync: false
-      - key: TEST
         sync: false
